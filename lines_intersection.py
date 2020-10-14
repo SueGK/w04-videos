@@ -36,13 +36,16 @@ b2 = 2
 
 A = numpy.array([[-m1, 1], [-m2, 1]])
 b = numpy.array([[b1], [b2]])
+#多用type等确认类型
+#print(numpy.type(b)) 想要A是(2,2) b是(2,1)
+#np.array([b1,b2]) type is (2,)
 
 Ainv = numpy.linalg.inv(A)
 
 
 # print(numpy.dot(Ainv, b))
 
-x_1 = numpy.linspace(-2, 6, 121)
+x_1 = numpy.linspace(-2, 6, 121) #从-2到6，共121个点
 y_1 = m1*x_1 + b1
 
 x_2 = x_1
@@ -52,5 +55,5 @@ plt.plot(x_1, y_1, color='magenta', linewidth=3)
 plt.plot(x_2, y_2, linestyle='--')
 
 plt.legend(['y = 0.5x + 0.5', 'y = -x + 2'])
-plt.grid()
-plt.show()
+plt.grid() #背景为方格
+plt.show() #显示图表
